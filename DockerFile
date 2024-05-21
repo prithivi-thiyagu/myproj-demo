@@ -8,7 +8,7 @@ COPY . .
 #RUN mvn verify clean
 RUN mvn package
 # Copy the JAR file (assuming it's located in target/)
-ADD target/*.jar myproj-demo.jar
+ADD target/myproj-demo-0.0.1.jar myproj-demo.jar
 
 ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "-Djsse.enableSNIExtension=false", "myproj-demo.jar"]
 
