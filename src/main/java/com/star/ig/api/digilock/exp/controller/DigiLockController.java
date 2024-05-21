@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("ig-digi-lock/api/v4/digi")
-@Api("DigiLock Services")
+//@Api("DigiLock Services")
 
 @Validated
 public class DigiLockController {
@@ -20,7 +20,7 @@ public class DigiLockController {
 
 
 
-	@ApiOperation(httpMethod = "GET", response = String.class, value = "This API is used to create check heart beat")
+	//@ApiOperation(httpMethod = "GET", response = String.class, value = "This API is used to create check heart beat")
 	@GetMapping(value = "/heartbeat")
 	public ResponseEntity<String> heartBeat() {
 		return ResponseEntity.ok("digilock-service-svc service is running");
