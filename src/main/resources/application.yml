@@ -1,0 +1,8 @@
+#Active profile
+server:
+  port: 8090
+
+spring:
+  application:
+    name: digilock-service-svc
+
