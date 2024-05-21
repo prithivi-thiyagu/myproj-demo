@@ -1,13 +1,12 @@
-# Start with a base image containing Java runtime
-FROM openjdk:8
+FROM maven:3-jdk-8
 
 
-
+RUN mkdir -p myproj-demo
 # Add a volume pointing to /tmp
 WORKDIR /myproj-demo
-
-FROM maven:3.8.4-eclipse-temurin-17 AS build
-RUN mvn install
+COPY . .
+RUN [ "mvn", "verify", "clean", "--fail-never"]
+RUN mvn package
 
 # Add the application's jar to the container
 ADD target/myproj-demo.jar myproj-demo.jar
@@ -17,3 +16,4 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","-Djsse.enab
 
 # Make port 8012 available to the world outside this container
 EXPOSE 8090
+~
