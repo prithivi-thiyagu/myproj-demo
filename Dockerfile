@@ -6,10 +6,15 @@ WORKDIR /myproj-demo
 COPY . .
 
 #RUN mvn verify clean
-RUN mvn package
+RUN spring-boot:repackage
 # Copy the JAR file (assuming it's located in target/)
 ADD target/myproj-demo-0.0.1.jar myproj-demo.jar
 
-ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "-Djsse.enableSNIExtension=false", "myproj-demo.jar"]
+RUN jar xf myproj-demo.jar
+RUN ls
+RUN cat META-INF/MANIFEST.MF
+
+
+ENTRYPOINT ["java", "-jar", "myproj-demo.jar"]
 
 EXPOSE 8090

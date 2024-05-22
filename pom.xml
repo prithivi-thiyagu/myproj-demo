@@ -19,46 +19,9 @@
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
-        <spring-ws-core>3.1.1</spring-ws-core>
-        <springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
-        <spring-cloud-starter-hystrix.version>1.4.6.RELEASE</spring-cloud-starter-hystrix.version>
-
-        <commons-lang3.version>3.11</commons-lang3.version>
-        <commons-collections4.version>4.1</commons-collections4.version>
-        <commons-httpclient.version>3.1</commons-httpclient.version>
-        <commons-io.version>2.6</commons-io.version>
-        <commons-beanutils.version>1.9.4</commons-beanutils.version>
-
-        <slf4j-simple.version>1.7.25</slf4j-simple.version>
-
-        <katharsis.version>3.0.1</katharsis.version>
-
-        <cxf-core.version>3.5.0</cxf-core.version>
-        <cxf-rt-rs-security-oauth2.version>3.5.0</cxf-rt-rs-security-oauth2.version>
-        <cxf-rt-transports-http-hc.version>3.2.0</cxf-rt-transports-http-hc.version>
-
-        <java-jwt.version>3.18.1</java-jwt.version>
-        <javax.jms-api.version>2.0.1</javax.jms-api.version>
-        <javax.json-api.version>1.1.4</javax.json-api.version>
-        <javax.ws.rs-api.version>2.1</javax.ws.rs-api.version>
-        <jackson-jaxrs-json-provider.version>2.5.3</jackson-jaxrs-json-provider.version>
-        <jakarta.ws.rs.version>2.1.4</jakarta.ws.rs.version>
-
-        <opencsv.version>2.4</opencsv.version>
-        <castor-xml.version>1.4.1</castor-xml.version>
-        <axis.version>1.4</axis.version>
-        <ant.version>1.9.6</ant.version>
-        <sleuth.version>3.1.1</sleuth.version>
-        <jjwt.version>0.6.0</jjwt.version>
-        <nimbus-jose-jwt.version>9.19</nimbus-jose-jwt.version>
-        <logstash-logback-encoder.version>7.0.1</logstash-logback-encoder.version>
-        <log4j2.version>2.20.0</log4j2.version>
-        <spring-cloud-sleuth-api.version>3.0.1</spring-cloud-sleuth-api.version>
-        <spring-security-web.version>5.6.1</spring-security-web.version>
-
-        <resilience4j.version>1.7.0</resilience4j.version>
-        <tika-parsers.version>1.17</tika-parsers.version>
-
+        <properties>
+            <start-class>com.star.ig.DigiLockerServiceApplication</start-class>
+        </properties>
     </properties>
 
     <dependencies>
@@ -81,6 +44,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                 <mainClass>com.star.ig.DigiLockerServiceApplication</mainClass>
+                    <layout>JAR</layout>
                 </configuration>
                 <executions>
                     <execution>
