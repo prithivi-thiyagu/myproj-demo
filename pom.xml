@@ -19,9 +19,9 @@
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
-        <properties>
+
             <start-class>com.star.ig.DigiLockerServiceApplication</start-class>
-        </properties>
+
     </properties>
 
     <dependencies>
