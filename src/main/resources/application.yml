@@ -6,3 +6,7 @@ spring:
   application:
     name: digilock-service-svc
 
+logging:
+  level:
+    org.springframework.web.method.support: TRACE  # Set DEBUG level for method support package
+    org.springframework.web.servlet: TRACE
