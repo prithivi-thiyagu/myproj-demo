@@ -4,9 +4,11 @@ metadata:
   name: myapp-svc
   namespace: myproj
 spec:
-  type: ClusterIP
-  ports:
-    - port: 8090
+  type: NodePort
   selector:
-    app: myapp
-
+    app: myapp # Replace with the selector matching your pods
+  ports:
+    - protocol: TCP
+      port: 8090 # External port users will access
+      targetPort: 8090 # Port on which your pods listen
+      nodePort: 30000 # Node port allocated by Kubernetes
