@@ -11,9 +11,9 @@ spec:
     - http:
         paths:
           - path: /ig-digi-lock/api/*
-            pathType: Prefix		  # Assuming you want to match any path under /ig-digi-lock/api/
-      backend:
-        service:
-          name: myapp-svc
-          port:
-            number: 8090
+            pathType: Prefix
+            backend:
+              service:
+                name: myapp-svc
+                port:
+                  number: 8090
