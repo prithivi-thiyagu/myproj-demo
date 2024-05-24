@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myapp-dep
-  namespace: myProj
+  namespace: myproj
 spec:
   replicas: 5
   selector:
