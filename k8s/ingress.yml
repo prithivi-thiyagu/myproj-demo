@@ -5,12 +5,22 @@ metadata:
   namespace: myproj
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+
 spec:
   ingressClassName: nginx
   rules:
     - http:
         paths:
           - path: /ig-digi-lock/api/*
+            pathType: Prefix
+            backend:
+              service:
+                name: myapp-svc
+                port:
+                  number: 8090
+          - path: /(.*)
             pathType: Prefix
             backend:
               service:
