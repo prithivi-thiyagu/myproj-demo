@@ -13,7 +13,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /ig-digi-lock/api/v4/digi(/|$)(.*)
+          - path: /test(/|$)(.*)
             pathType: Prefix
             backend:
               service:
