@@ -5,32 +5,15 @@ metadata:
   namespace: myproj
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
   rules:
     - http:
         paths:
-          - path: /ig-digi-lock/api(/|$)(.*)
-            pathType: Prefix
-            backend:
-              service:
-                name: myapp-svc
-                port:
-                  number: 8090
-#          - path: /httpd(/|$)(.*)
-#            pathType: Prefix
-#            backend:
-#              service:
-#                name: httpd
-#                port:
-#                  number: 80
-#          - path: /(.*)
-#            pathType: Prefix
-#            backend:
-#              service:
-#                name: jav-svc
-#                port:
-#                  number: 8080
-
+          - path: /ig-digi-lock/api/*
+            pathType: Prefix		  # Assuming you want to match any path under /ig-digi-lock/api/
+      backend:
+        service:
+          name: myapp-svc
+          port:
+            number: 8090
