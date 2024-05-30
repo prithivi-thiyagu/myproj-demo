@@ -23,7 +23,7 @@ String val;
 	//@ApiOperation(httpMethod = "GET", response = String.class, value = "This API is used to create check heart beat")
 	@GetMapping(value = "/heartbeat")
 	public ResponseEntity<String> heartBeat() {
-	String value = 	val+"digilock-service-svc service is running";
+	String value = 	val+"digilock-service-svc service is running123";
 	return ResponseEntity.ok(value);
 	}
 
