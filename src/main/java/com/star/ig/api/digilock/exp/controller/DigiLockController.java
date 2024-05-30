@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DigiLockController {
 
 
-@Value("mytest.value")
+@Value("${mytest.value}")
 String val;
 
 
